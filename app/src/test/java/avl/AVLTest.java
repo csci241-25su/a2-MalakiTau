@@ -102,11 +102,11 @@ public class AVLTest {
     checkWithHeight(n.left);
     checkWithHeight(n.right);
   }
-
+  
 
   private static void treeEquals(
       AVL a, String preo, String ino, String posto) {
-
+      
     assertTrue(preOrder(a.root).equals(preo));
     assertTrue(inOrder(a.root).equals(ino));
     assertTrue(postOrder(a.root).equals(posto));
