@@ -50,6 +50,7 @@ public class AVL {
     Node nd;
     int h;
     if(n.word.compareTo(w)>0){
+      //In the event insert goes left
       if(n.left!=null){
         bstInsert(n.left, w);
       }
@@ -69,6 +70,7 @@ public class AVL {
       }
     }
     else if(n.word.compareTo(w)<0){
+      //In the event insert goes right
       if(n.right!=null){
         bstInsert(n.right, w);
       }
@@ -103,7 +105,7 @@ public class AVL {
     }
     avlInsert(root, w);
   }
-  
+  /** Update the height of the accepted node. */
   public int getHeight(Node n){
     if(n==null){
       return -1;
@@ -126,6 +128,7 @@ public class AVL {
   private void avlInsert(Node n, String w) {
     Node insert = new Node(w);
     if(n.word.compareTo(w)>0){
+      //In the event insert goes left
       if(n.left!=null){
         avlInsert(n.left, w);
       }
@@ -138,6 +141,7 @@ public class AVL {
       }
     }
     else if(n.word.compareTo(w)<0){
+      //In the event insert goes right
       if(n.right!=null){
         avlInsert(n.right, w);
       }
@@ -204,21 +208,6 @@ public class AVL {
     x.height--;
     y.height = getHeight(y);
   }
-  private static void print(AVL.Node n, int level){
-    if (n == null){
-        return;
-    }
-
-    String str = "";
-    for (int i = 0; i < level; i++){
-        str += "    ";
-    }
-    str += n.word;
-
-    System.out.println(str);
-    print(n.right, level+1);
-    print(n.left, level+1);
-  }
 
   /** rebalance a node N after a potentially AVL-violoting insertion.
   *  precondition: none of n's descendants violates the AVL property */
@@ -241,7 +230,6 @@ public class AVL {
         leftRotate(n);
       }
     }
-    print(n, 0);
     n.height = getHeight(n);
   }
 
