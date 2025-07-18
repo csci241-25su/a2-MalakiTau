@@ -1,5 +1,7 @@
+///Author: Malaki-Jacob Taub
+///Date: 7/16/2025
+///Description: Returns the number of unique
 package avl;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
@@ -51,8 +53,12 @@ public class Unique {
 
     /** Return the number of unique lines availble to be read by sc */ 
     private static int avlUnique(Scanner sc) {
-      // TODO - implement this; its runtime should be O(n log n)
-      return 0; // placeholder, so code compiles
+      AVL methods = new AVL();
+      while (sc.hasNextLine()) {
+        String line = sc.nextLine();
+        methods.avlInsert(line);
+      }
+      return methods.getSize();
     }
 
 
