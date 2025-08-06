@@ -114,10 +114,10 @@ public class AVL {
       return 0;
     }
     else if(n.left!=null && n.right==null){
-      return 1 + n.left.height;
+      return 1+n.left.height;
     }
     else if(n.right!=null && n.left==null){
-      return 1 + n.right.height;
+      return 1+n.right.height;
     }
     else{
       return 1 + Math.max(n.left.height, n.right.height);
@@ -182,6 +182,7 @@ public class AVL {
     x.height++;
     y.height--;
     x.height = getHeight(x);
+    y.height = getHeight(y);
   }
 
   /** do a right rotation: rotate on the edge from x to its left child.
@@ -207,6 +208,7 @@ public class AVL {
     y.height++;
     x.height--;
     y.height = getHeight(y);
+    x.height = getHeight(x);
   }
 
   /** rebalance a node N after a potentially AVL-violoting insertion.
