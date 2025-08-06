@@ -15,7 +15,6 @@ import org.junit.runners.MethodSorters;
 public class AVLTest {
   @Rule
   public Timeout globalTimeout = Timeout.seconds(3); // 3sec timeout
-
   private static String preOrder(AVL.Node n) {
     if (n == null) {
       return "";
@@ -102,11 +101,11 @@ public class AVLTest {
     checkWithHeight(n.left);
     checkWithHeight(n.right);
   }
-
+  
 
   private static void treeEquals(
       AVL a, String preo, String ino, String posto) {
-
+      
     assertTrue(preOrder(a.root).equals(preo));
     assertTrue(inOrder(a.root).equals(ino));
     assertTrue(postOrder(a.root).equals(posto));
@@ -589,12 +588,11 @@ public class AVLTest {
     a.avlInsert("kmrd");
     a.avlInsert("boms");
     a.avlInsert("ldsu");
-
     checkWithHeight(a);
     treeEquals(a, "kivz fefb dmim bvry bjdo aigx boms bkde bsey cjwj bwmu ctvf ejhd eadj dwwi fbhz ersx fdiq gzvg gwrg fzhr frsr gcbp gzuh inac hdig hbpf ijxs hvjh jrth jjeq ixuy jqit kaqq jxbq ranl mqon lbvv ktfr kjrl kmrd kvgb kurn kwvl lsxh leec ldsu lhvp matu lwkw moph ohkq naso murr mqpy muzo obmk nslc pndi opvy opnu pgrs pxwa ppol qbto vgen taaf rztl rgbo rchs ruqb rkjw sbsx sath svfl twpx tshu tinh tdur tsyj usue tywp umoi uzqn xqyh wiae vtud vpaq wfki wvum wpip xlcp zocw xtze xtcl xrym xxfu yxzx zxfd zomf", "aigx bjdo bkde boms bsey bvry bwmu cjwj ctvf dmim dwwi eadj ejhd ersx fbhz fdiq fefb frsr fzhr gcbp gwrg gzuh gzvg hbpf hdig hvjh ijxs inac ixuy jjeq jqit jrth jxbq kaqq kivz kjrl kmrd ktfr kurn kvgb kwvl lbvv ldsu leec lhvp lsxh lwkw matu moph mqon mqpy murr muzo naso nslc obmk ohkq opnu opvy pgrs pndi ppol pxwa qbto ranl rchs rgbo rkjw ruqb rztl sath sbsx svfl taaf tdur tinh tshu tsyj twpx tywp umoi usue uzqn vgen vpaq vtud wfki wiae wpip wvum xlcp xqyh xrym xtcl xtze xxfu yxzx zocw zomf zxfd", "aigx bkde bsey boms bjdo bwmu ctvf cjwj bvry dwwi eadj ersx fdiq fbhz ejhd dmim frsr gcbp fzhr gzuh gwrg hbpf hvjh ijxs hdig ixuy jqit jjeq jxbq kaqq jrth inac gzvg fefb kmrd kjrl kurn kwvl kvgb ktfr ldsu lhvp leec lwkw moph matu lsxh lbvv mqpy muzo murr nslc obmk naso opnu pgrs opvy ppol qbto pxwa pndi ohkq mqon rchs rkjw ruqb rgbo sath svfl sbsx rztl tdur tinh tsyj tshu umoi tywp uzqn usue twpx taaf vpaq wfki vtud wpip xlcp wvum wiae xrym xtcl yxzx xxfu xtze zomf zxfd zocw xqyh vgen ranl kivz");
 
   }
-
+  
 
 
 }
